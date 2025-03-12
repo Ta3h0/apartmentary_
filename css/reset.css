@@ -1,0 +1,4 @@
+a,p,del,ul,ol,li,span,th,td{color: inherit;list-style: none;text-decoration: none;}h1,h2,h3,h4,h5,h6,strong{color: inherit;list-style: none;text-decoration: none;}
+*{margin: 0;padding: 0;box-sizing: border-box;}
+img{width: 100%;height: 100%;object-fit: cover;}
+body{color: #333;line-height: 1;}
