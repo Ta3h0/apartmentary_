@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아파트멘터리 - 인테리어가 쉬워진다</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script>
+
+        window.onload = () => {
+
+            var swiper = new Swiper(".mySwiper_main", {
+                loop: true,
+                autoplay: true,
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                breakpoints: {
+                    909: {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 146,
+                    },
+                },
+            });
+
+            AOS.init();
+
+        };//js end
+
+        $(function () {
+
+            window.onscroll = () => {
+                let scrollBar = window.scrollY;
+                let cont02Position = $('.cont02').offset().top;
+
+                let cont02PositionTop = cont02Position - 200
+                let cont02PositionBottom = cont02PositionTop + 700
+
+                console.log(scrollBar)
+
+                if ($('.cont02').width() >= 1216) {
+                    if (scrollBar < cont02PositionTop) {
+
+                        $('.cont02 .inner').css({
+                            'width': '745px'
+                        })
+                        $('.cont02 .inner .left').css({
+                            'height': '463px',
+                            'border-radius': '50%'
+                        })
+                        $('.cont02 .inner .left video').hide();
+                    } else if (scrollBar > cont02PositionBottom) {
+
+                        $('.cont02 .inner').css({
+                            'width': '745px'
+                        })
+                        $('.cont02 .inner .left').css({
+                            'height': '463px',
+                            'border-radius': '50%'
+                        })
+                        $('.cont02 .inner .left video').hide();
+                    } else {
+                        $('.cont02 .inner').css({
+                            'width': '1000px'
+                        })
+                        $('.cont02 .inner .left').css({
+                            'height': '710px',
+                            'border-radius': '0'
+                        })
+                        $('.cont02 .inner .left video').show();
+                    }
+                }
+
+            };
+
+            $('header .inner .menu_open').click(function (){
+
+                $('header .inner .menu_open').toggleClass('on');
+
+                if($('header .inner .menu_open').hasClass('on') == true) {
+                    $('header .inner .mobile_menu').css({
+                        'right' : '0'
+                    })
+                } else {
+                    $('header .inner .mobile_menu').css({
+                        'right' : '-100%'
+                    })
+                }
+
+            })
+
+            $("header").mouseenter(function(){
+                $("header .pc.depth2").slideDown();
+            })
+            $("header").mouseleave(function(){
+                $("header .pc.depth2").slideUp();
+            })
+
+
+        });//jQuery end
+
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap" style="overflow: hidden;">
+        <header>
+            <div class="inner">
+                <h1><a href="#" style="display: flex; justify-content: center; align-items: center;">
+                        <svg width="auto" height="45" viewBox="0 0 126 145" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_806_3140)">
+                                <path
+                                    d="M82.631 14.9692H103.109V0H76.2944H57.6512H22.002V14.9692H64.002L86.5403 68.1978H39.6996L55.2944 31.767H36.6653L0 117.372H18.6431L33.2923 83.167H92.877L107.371 117.372H126L82.631 14.9692Z"
+                                    fill="black" />
+                                <path d="M103.109 130.018H22.002V144.987H103.109V130.018Z" fill="black" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_806_3140">
+                                    <rect width="126" height="145" fill="black" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                    </a></h1>
+
+                <ul class="pc gnb">
+                    <li class="depth1"><a href="#">제품</a></li>
+                    <li class="depth1"><a href="#">포트폴리오</a></li>
+                    <li class="depth1"><a href="#">서비스 소개</a></li>
+                    <li class="depth1"><a href="#">읽을거리</a></li>
+                    <li class="depth1"><a href="https://apartmentary.com/inquiry" #>상담 신청 <span>EASY</span></a></li>
+                    <ul class="pc depth2">
+                        <li><a href="#">포세린 / 폴리싱</a></li>
+                        <li><a href="#">강마루</a></li>
+                        <li><a href="#">강화마루</a></li>
+                        <li><a href="#">데코타일</a></li>
+                    </ul>
+                </ul><!-- .pc.gnb end -->
+                
+
+                <div class="mobile menu_open">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div>
+
+                <div class="mobile mobile_menu">
+                    <ul class="mobile_gnb">
+                        <li class="depth1">
+                            <a href="#">제품</a>
+                            <ul class="depth2">
+                                <li><a href="#">포세린 / 폴리싱</a></li>
+                                <li><a href="#">강마루</a></li>
+                                <li><a href="#">강화마루</a></li>
+                                <li><a href="#">데코타일</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth1"><a href="#">포트폴리오</a></li>
+                        <li class="depth1"><a href="#">서비스 소개</a></li>
+                        <li class="depth1"><a href="#">읽을거리</a></li>
+                        <li class="depth1"><a href="https://apartmentary.com/inquiry" #>상담 신청</a></li>
+                    </ul><!-- .mobile_gnb end -->
+                </div><!-- .mobile .mobile_menu end -->
+            </div><!-- .inner end -->
+        </header>
+
+        <main>
+            <section class="main_visual">
+                <div class="main_visual_inner">
+                    <div class="swiper mySwiper_main">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/1.jpg" alt="1번 인테리어 사진">
+                                <div class="text">
+                                    <h1>합리적 가격, 높은 퀄리티</h1>
+                                    <p>두가지를 모두 잡은 서비스</p>
+                                </div><!-- text -->
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/2.jpg" alt="2번 인테리어 사진">
+                                <div class="text">
+                                    <h1>온전한 휴식이 가능한 안식처</h1>
+                                    <p>공간에 온전히 담긴 라이프 스타일</p>
+                                </div><!-- text -->
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/3.jpg" alt="3번 인테리어 사진">
+                                <div class="text">
+                                    <h1>취향이 느껴지는 아파트</h1>
+                                    <p>공간에 온전히 담긴 라이프 스타일</p>
+                                </div><!-- text -->
+
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/4.jpg" alt="4번 인테리어 사진">
+                                <div class="text">
+                                    <h1>인테리어의 완성은 스타일링</h1>
+                                    <p>가구와 소품으로 확연히 달라지는 공간</p>
+                                </div><!-- text -->
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/6.jpg" alt="5번 인테리어 사진">
+                                <div class="text">
+                                    <h1>따스함이 느껴지는 집</h1>
+                                    <p>온기를 불어넣은 우드 인테리어</p>
+                                </div><!-- text -->
+                            </div>
+                        </div>
+
+                        <div class="main_visual_button">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div><!-- .main_visual_button end -->
+
+
+                    </div>
+
+                    <div class="main_visual_small">
+                        <h1>APARTMENTARY</h1>
+                        <video>
+                            <source>
+                        </video>
+                        <p class="left_line"></p>
+                        <p class="right_line"></p>
+                    </div>
+
+                    <div class="mobile_text">
+                        <div class="inner">
+                            <p>나의 인테리어<br>이곳에서 찾으세요</p>
+                            <h4>APARTMENTARY</h4>
+                        </div><!-- .inner end -->
+                    </div><!-- .mobile_text end -->
+                </div><!-- .main_visual_inner end -->
+
+            </section><!-- .main_visual end -->
+
+            <!-- <section class="cont01">
+                <div class="cont01_left" data-aos="fade-right">
+                    <div>
+                        <h3>과거</h3>
+                        <p>집은 안락한 휴식처 혹은<br>잠깐 머물다 가는 공간에 가까웠다</p>
+                    </div>
+                    <img src="img/수면.png" alt="수면">
+                </div>
+                <div class="cont01_right" data-aos="fade-left">
+                    <img src="img/복합문화.png" alt="복합생활공간">
+                    <div>
+                        <h3>하지만</h3>
+                        <p>현대에 들어서면서<br />'집'은 모든 활동이 가능한 '복합생활공간'으로<br />의미가 변화하고 있다</p>
+                    </div>
+                </div>
+
+                <div class="cont01_center" data-aos="fade-up">
+                    <h3>변화한 만큼</h3>
+                    <p>모두가 만족할 수 있는 인테리어를 위해</p>
+                    <p>탄생한 서비스</p>
+                    <h3>APARTMENTARY</h3>
+
+                </div>
+            </section> -->
+
+            <section class="mini-menu" style="padding: 140px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <h2 style="margin-bottom:30px; font-size: 40px;">어떤 제품을 찾고 계신가요?</h2>
+                <div class="menu-inner" style="margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="menu-item">
+                        <img src="/img/타일.jpg" alt="No Image">
+                        <p class="item-text">타일</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="/img/강.jpg" alt="No Image">
+                        <p class="item-text">강마루</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="/img/강화.jpg" alt="No Image">
+                        <p class="item-text">강화마루</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="/img/데코.jpg" alt="No Image">
+                        <p class="item-text">데코타일</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cont02" data-aos="zoom-out">
+                <div class="inner">
+                    <div class="left">
+                        <video autoplay muted loop>
+                            <source src="img/main-introduce.mp4">
+                        </video>
+
+                        <!-- 가상선택자로 덮기 -->
+
+                    </div><!-- .left end -->
+
+                    <div class="right">
+                        <h3>인테리어가 어려우시다구요?</h3>
+                        <p>걱정없이 기대만 남을 인테리어 서비스</p>
+                        <p>집을 고치기로 결심한 순간부터 쌓이는 고민들</p>
+                        <p>아파트멘터리와 함께라면 걱정없이 설렘만 가득할 거예요</p>
+
+                        <a href="https://apartmentary.com/service/detail/essential" target="_blank">서비스 알아보기</a>
+                    </div><!-- .right end -->
+                </div><!-- .inner end -->
+            </section><!-- .cont02 end -->
+
+            <section class="cont03">
+
+                <h3>취향을 발견해가는 즐거운 여정</h3>
+
+                <div class="cont03_first">
+
+                    <div class="title">
+                        <h3>공간 활용도를 높인 30평대 아파트</h3>
+                        <a href="https://apartmentary.com/portfolio?page=0&spaceSizes=40" target="_blank">더보기</a>
+                    </div><!-- .title end -->
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/kqidoqjrdb" target="_blank">
+                                    <figure>
+                                        <img src="img/30평아파트1.jpg" alt="">
+                                    </figure>
+                                    <h4>강남 서초더샵포레 아파트</h4>
+                                    <p>추억이 깃든 가구에 맞춰 더욱 멋스러운
+                                        내추럴 인테리어를 만나보세요</p>
+                                    <span>평당 260만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/ibrdwrbldq" target="_blank">
+                                    <figure>
+                                        <img src="img/30평아파트2.jpg" alt="">
+                                    </figure>
+                                    <h4>성동 트리마제 아파트</h4>
+                                    <p>이국적인 분위기의 주방 인테리어를 만나보세요</p>
+                                    <span>평당 260만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/jildblildw" target="_blank">
+                                    <figure>
+                                        <img src="img/30평아파트3.jpg" alt="">
+                                    </figure>
+                                    <h4>위례 중흥S클래스 아파트</h4>
+                                    <p>고급스러운 아일랜드 주방 인테리어를 만나보세요</p>
+                                    <span>평당 150만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/woidifbbdf" target="_blank">
+                                    <figure>
+                                        <img src="img/30평아파트4.jpg" alt="">
+                                    </figure>
+                                    <h4>하남 미사 강변 더샵센트럴포레 아파트 </h4>
+                                    <p>화사한 화이트우드 인테리어를 만나보세요</p>
+                                    <span>평당 180만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/rfpdrbridj" target="_blank">
+                                    <figure>
+                                        <img src="img/30평아파트5.jpg" alt="">
+                                    </figure>
+                                    <h4>관악 제창그로힐 아파트 </h4>
+                                    <p>차분한 화이트 인테리어를 만나보세요.</p>
+                                    <span>평당 260만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/oipdkifidw" target="_blank">
+                                    <figure>
+                                        <img src="img/30평아파트6.jpg" alt="">
+                                    </figure>
+                                    <h4>영통 아이파크캐슬 아파트 </h4>
+                                    <p>홈카페존이 돋보이는 인테리어를 만나보세요</p>
+                                    <span>평당 160만 원 ~</span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div><!-- .cont03_first end -->
+
+                <div class="cont03_second">
+
+                    <div class="title">
+                        <h3>오래도록 아름다운 구축 아파트</h3>
+                        <a href="https://apartmentary.com/portfolio?page=0&services=OLD" target="_blank">더보기</a>
+                    </div><!-- .title end -->
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/loqdpjpbdi" target="_blank">
+                                    <figure>
+                                        <img src="img/구축아파트1.jpg" alt="1">
+                                    </figure>
+                                    <h4>강남 한보미도맨션 아파트</h4>
+                                    <p>화이트&우드 인테리어가 돋보이는 공간을 만나보세요</p>
+                                    <span>평당 260만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/bjqdfjbfdl" target="_blank">
+                                    <figure>
+                                        <img src="img/구축아파트2.jpg" alt="2">
+                                    </figure>
+                                    <h4>일산 위시티블루밍 아파트</h4>
+                                    <p>10년 된 아파트를 새 집처럼 화이트 신혼집 <br>인테리어를 만나보세요</p>
+                                    <span>평당 230만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/oipdkibqdw" target="_blank">
+                                    <figure>
+                                        <img src="img/구축아파트3.jpg" alt="3">
+                                    </figure>
+                                    <h4>용산 더 프라임 아파트</h4>
+                                    <p>고급스러운 모던 인테리어를 만나보세요</p>
+                                    <span>평당 260만 원  ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/jildblrldw" target="_blank">
+                                    <figure>
+                                        <img src="img/구축아파트4.jpg" alt="4">
+                                    </figure>
+                                    <h4>다산 플루리움 아파트</h4>
+                                    <p>우드 인테리어로 포인트를 준 50평대 아파트를 만나보세요</p>
+                                    <span>평당 260만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/woqdjlordj" target="_blank">
+                                    <figure>
+                                        <img src="img/구축아파트5.jpg" alt="">
+                                    </figure>
+                                    <h4>강남 래미안 그레이튼 2차 아파트</h4>
+                                    <p>간살 중문으로 포인트를 준 공간을 만나보세요.</p>
+                                    <span>평당 210만 원 ~</span>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="https://apartmentary.com/portfolio/ibrdwrpwdq" target="_blank">
+                                    <figure>
+                                        <img src="img/구축아파트6.jpg" alt="">
+                                    </figure>
+                                    <h4>노원 상계주공 아파트</h4>
+                                    <p>효율적으로 수납공간을 마련한<br>아담한 평수 인테리어를 만나보세요</p>
+                                    <span>평당 260만 원 ~</span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div><!-- .cont03_second end -->
+
+
+            </section><!-- .cont03 end -->
+
+            <section class="cont04">
+                    <h4>우리는 이렇게 서비스합니다</h4>
+
+                <div class="second"">
+                    <video autoplay muted loop>
+                        <source src="img/brand-banner.mp4">
+                    </video>
+
+                    <div>
+                        <h4>체계적이고 효율적인<br>전체 프로세스</h4>
+                        <p>우리 가족이 오랜 시간을 보낼 집이니까,<br>
+                            꼼꼼하고 체계적으로 리모델링 해야합니다.<br>
+                            문서 교환, 매니저 소통, 공사 현황 공유 등<br>
+                            전용 앱으로 모두 가능합니다.<br>
+                            마감과 마무리 A/S까지 함께 하겠습니다.</p>
+                    </div>
+                </div><!-- .second end -->
+
+                <div class="third" data-aos="fade-left">
+                    <div>
+                        <h4 style="text-align: right;">데이터 기반의<br>
+                            가격 정찰제</h4>
+                        <p>인테리어 비용의 애매한 기준,<br>
+                            아파트멘터리가 정의할게요.<br>
+                            동일한 평형이라면 동일한 기준 적용.<br>
+                            견적의 변동 없이 처음 가격 그대로.<br>
+                            투명하고 정직한 견적을 제공합니다.</p>
+                    </div>
+
+                    <figure>
+                        <img src="img/frame.png" alt="1">
+                        <video autoplay muted loop>
+                            <source src="img/price.mp4">
+                        </video>
+                    </figure>
+
+                </div><!-- .second end -->
+
+                <div class="forth">
+                    <h4>기분 좋은 인테리어의 시작</h4>
+                    <p>아파트멘터리와 지금 시작해보세요</p>
+                </div>
+            </section><!-- .cont04 end -->
+
+            <section class="end">
+                <img src="img/end.jpg" alt="0">
+                <div class="end_inner">
+                    <a href="https://apartmentary.com/inquiry" target="_blank">
+                        상담신청
+                    </a>
+                </div>
+            </section><!-- .end end -->
+
+        </main>
+
+        <footer>
+            <div class="left">
+                <img src="img/로고.svg" alt="로고">
+            </div><!-- left -->
+
+            <div class="right">
+                <div class="right_top">
+                    <ul>
+                        <li><a href="#">이용정보</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div><!-- .right_top end -->
+
+                <hr>
+
+                <div class="right_bottom">
+                    <li>· 법인명: 아파트멘터리(주) · 대표자: 윤소연, 김준영 · 사업자 등록번호: 723-87-00195 </li>
+                    <li>· 통신판매업 신고: 제 2016-서울마포-0923호· 개인정보관리책임자: 황은미(mia@apartmentary.com)</li>
+                    <li>· 주소: 서울특별시 강남구 도산대로 237 3,4F ·Tel ) 02-6356-1224</li>
+                    <p>© 2015-2022 All Rights Reserved.</p>
+                </div><!-- .right_bottom end -->
+            </div><!-- .right end -->
+
+        </footer>
+
+    </div><!-- #wrap end -->
+
+</body>
+
+</html>
